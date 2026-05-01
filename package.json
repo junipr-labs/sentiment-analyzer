@@ -1,0 +1,26 @@
+{
+  "name": "@junipr/sentiment-analyzer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Analyze text sentiment — positive, negative, neutral, or mixed. Detect emotions, extract key phrases, detect language. Offline NLP, no external API needed.",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "apify": "^3.2.0",
+    "natural": "^6.0.0",
+    "franc": "^6.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.0.0"
+  },
+  "author": "Jesse Eldridge <dev@junipr.io>",
+  "license": "MIT"
+}
