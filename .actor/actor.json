@@ -1,0 +1,19 @@
+{
+  "actorSpecification": 1,
+  "name": "sentiment-analyzer",
+  "title": "Sentiment Analyzer",
+  "description": "Analyze text sentiment — positive, negative, neutral, or mixed. Detect emotions (joy, anger, sadness), extract key phrases, detect language. Batch up to 100K texts. Offline NLP, no external AI API.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "meta": {
+    "categories": ["DEVELOPER_TOOLS", "AI"],
+    "defaultRunOptions": {
+      "build": "latest",
+      "memoryMbytes": 512,
+      "timeoutSecs": 300
+    }
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json"
+}

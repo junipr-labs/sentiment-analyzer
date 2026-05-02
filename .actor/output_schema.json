@@ -1,0 +1,13 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Sentiment Analyzer Output",
+  "description": "Sentiment analysis results for each text, including sentiment label, compound score, emotion detection, key phrases, and language detection.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Analysis Results",
+      "description": "One sentiment analysis result per input text.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

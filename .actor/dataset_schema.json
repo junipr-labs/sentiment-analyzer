@@ -1,0 +1,80 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "id": {
+            "type": "string",
+            "title": "Text ID",
+            "description": "Optional identifier for the text",
+            "nullable": true
+        },
+        "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "The analyzed text"
+        },
+        "textLength": {
+            "type": "number",
+            "title": "Text Length",
+            "description": "Character count of the text"
+        },
+        "wordCount": {
+            "type": "number",
+            "title": "Word Count",
+            "description": "Number of words in the text"
+        },
+        "language": {
+            "type": "string",
+            "title": "Language",
+            "description": "Detected language code",
+            "nullable": true
+        },
+        "sentiment": {
+            "type": "string",
+            "title": "Sentiment",
+            "description": "Overall sentiment: positive, negative, neutral, or mixed"
+        },
+        "sentimentScore": {
+            "type": "number",
+            "title": "Sentiment Score",
+            "description": "Numeric sentiment score (-1 to 1)"
+        },
+        "confidence": {
+            "type": "number",
+            "title": "Confidence",
+            "description": "Confidence in the sentiment classification"
+        },
+        "emotions": {
+            "type": "object",
+            "title": "Emotions",
+            "description": "Detected emotion scores (joy, anger, sadness, fear, surprise, disgust)",
+            "nullable": true
+        },
+        "dominantEmotion": {
+            "type": "string",
+            "title": "Dominant Emotion",
+            "description": "The most prominent detected emotion",
+            "nullable": true
+        },
+        "keyPhrases": {
+            "type": "array",
+            "title": "Key Phrases",
+            "description": "Important phrases extracted from the text"
+        },
+        "wordScores": {
+            "type": "array",
+            "title": "Word Scores",
+            "description": "Per-word sentiment scores"
+        },
+        "metadata": {
+            "type": "object",
+            "title": "Metadata",
+            "description": "User-provided metadata",
+            "nullable": true
+        },
+        "analyzedAt": {
+            "type": "string",
+            "title": "Analyzed At",
+            "description": "ISO 8601 timestamp of the analysis"
+        }
+    }
+}

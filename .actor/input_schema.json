@@ -1,0 +1,81 @@
+{
+  "title": "Sentiment Analyzer Input",
+  "description": "Analyze sentiment of text inputs using AFINN, VADER, or combined models. Detects emotions, extracts key phrases, and classifies text as positive, negative, neutral, or mixed.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "texts": {
+      "title": "Texts to Analyze",
+      "type": "array",
+      "description": "List of texts to analyze. Each can be a plain string or an object with 'text' and optional 'id' fields. Max 100,000 texts.",
+      "default": [
+        "This product is amazing! Best purchase I've ever made.",
+        "Terrible service, waited 2 hours and nobody helped.",
+        "The package arrived on Tuesday as expected."
+      ],
+      "items": { "type": "string" },
+      "editor": "json"
+    },
+    "detectEmotions": {
+      "title": "Detect Emotions",
+      "type": "boolean",
+      "description": "Detect specific emotions (joy, anger, sadness, fear, surprise, disgust) in addition to sentiment polarity.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "extractKeyPhrases": {
+      "title": "Extract Key Phrases",
+      "type": "boolean",
+      "description": "Extract key phrases/words that contribute most to the sentiment score.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "detectLanguage": {
+      "title": "Detect Language",
+      "type": "boolean",
+      "description": "Detect language of each text. Analysis quality is best for English.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "sentimentModel": {
+      "title": "Sentiment Model",
+      "type": "string",
+      "description": "Sentiment analysis approach: afinn (AFINN-165 lexicon), vader (rules-based), combined (ensemble — most accurate).",
+      "default": "combined",
+      "enum": ["afinn", "vader", "combined"],
+      "editor": "select"
+    },
+    "neutralThreshold": {
+      "title": "Neutral Threshold",
+      "type": "number",
+      "description": "Compound score between -threshold and +threshold is classified as neutral. Min: 0.01, Max: 0.30.",
+      "default": 0.05,
+      "minimum": 0.01,
+      "maximum": 0.30,
+      "editor": "number"
+    },
+    "includeWordScores": {
+      "title": "Include Word Scores",
+      "type": "boolean",
+      "description": "Include per-word sentiment scores in output (detailed breakdown).",
+      "default": false,
+      "editor": "checkbox"
+    },
+    "onlySentiment": {
+      "title": "Filter by Sentiment",
+      "type": "string",
+      "description": "Filter output to only texts matching this sentiment: positive, negative, neutral, mixed. Leave empty for all.",
+      "enum": ["positive", "negative", "neutral", "mixed"],
+      "editor": "select"
+    },
+    "minimumConfidence": {
+      "title": "Minimum Confidence",
+      "type": "number",
+      "description": "Only output results with confidence >= this threshold. Min: 0, Max: 1.",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 1,
+      "editor": "number"
+    }
+  }
+}
